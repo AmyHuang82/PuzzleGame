@@ -7,7 +7,7 @@ import RankingShow from './RankingShow';
 class Main extends React.Component {
     render() {
         return (
-            <Router>
+            <Router basename={"/PuzzleGame"}>
                 <Link to="/" className="category">Game</Link>
                 <Link to="/ranking" className="category">Rank</Link>
 
