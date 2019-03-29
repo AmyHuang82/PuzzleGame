@@ -23,6 +23,7 @@ div {
     color: gray;
     outline: none;
     text-decoration:none;
+    padding: 10px 0;
 }
 
 .player-input {

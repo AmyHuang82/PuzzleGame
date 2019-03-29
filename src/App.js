@@ -47,11 +47,13 @@ class App extends React.Component {
         }
 
         // 遊戲初始
-        this.setState({ name: this.state.name });
-        this.setState({ start: true });
-        this.setState({ blocks: blocks });
-        this.setState({ result: "" });
-        this.setState({ count: 0 });
+        this.setState({
+            name: this.state.name,
+            start: true,
+            blocks: blocks,
+            result: "",
+            count: 0
+        });
     }
     exchangeNumber(index, e) {
         let count = this.state.count;
@@ -163,25 +165,37 @@ class App extends React.Component {
         if (result) {
             let playerList = JSON.parse(localStorage.getItem('player')) || [];
             // 判斷排名
+            let name = this.state.name;
             let rank = playerList.length + 1;
             let moves = this.state.count + 1;
             for (let i = 0; i < playerList.length; i++) {
                 if (moves < playerList[i].moves) {
+                    let currentName = name;
+                    name = playerList[i].name;
+                    playerList[i].name = currentName;
+
                     let currentRank = rank;
                     rank = playerList[i].rank;
                     playerList[i].rank = currentRank;
+
+                    let currentMoves = moves;
+                    moves = playerList[i].moves;
+                    playerList[i].moves = currentMoves;
+
                 } else if (moves === playerList[i].moves) {
                     rank = playerList[i].rank;
                 }
             }
 
-            let playRecord = { name: this.state.name, rank: rank, moves: moves };
+            let playRecord = { name: name, rank: rank, moves: moves };
             playerList.push(playRecord);
             localStorage.setItem('player', JSON.stringify(playerList));
 
-            this.setState({ result: `${this.state.name}恭喜！你用${moves}步完成了！` });
-            this.setState({ start: false });
-            this.setState({ name: "" });
+            this.setState({
+                result: `${this.state.name}恭喜！你用${moves}步完成了！`,
+                start: false,
+                name: ""
+            });
         }
     }
     render() {
