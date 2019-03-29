@@ -2,8 +2,27 @@
     box-sizing: border-box;
 }
 
+body {
+    margin: 0;
+    padding: 0;
+}
+
 div {
     text-align: center;
+}
+
+.category {
+    display: inline-block;
+    width: 50%;
+    margin-bottom: 50px;
+    border: 1px solid rgb(165, 165, 165);
+    border-top: none;
+    cursor: pointer;
+    font-size: 20px;
+    border-radius: 0 0 5px 5px;
+    color: gray;
+    outline: none;
+    text-decoration:none;
 }
 
 .player-input {
@@ -37,10 +56,6 @@ div {
     color: rgb(8, 53, 138);
 }
 
-#root>div {
-    margin-top: 30px;
-}
-
 .counter {
     margin: 10px;
 }
@@ -69,4 +84,20 @@ div {
 .blank {
     font-size: 0;
     background-color: white;
+}
+
+.ranking-table {
+    display: flex;
+    flex-flow: row wrap;
+    width: 302px;
+    margin: 0 auto;
+}
+
+.ranking-table>p {
+    width: 33.33333%;
+}
+
+.ranking-table>.title {
+    border-bottom: 1px solid gray;
+    padding-bottom: 10px;
 }
