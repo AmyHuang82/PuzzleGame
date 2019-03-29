@@ -8,8 +8,8 @@ class Main extends React.Component {
     render() {
         return (
             <Router>
-                <Link to="/" className="category">Game</Link>
-                <Link to="/ranking" className="category">Rank</Link>
+                <Link to="/PuzzleGame/" className="category">Game</Link>
+                <Link to="/PuzzleGame/ranking" className="category">Rank</Link>
 
 
                 <Route path="/" exact render={
