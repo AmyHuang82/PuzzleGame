@@ -6,8 +6,35 @@ div {
     text-align: center;
 }
 
-input {
-    margin-right: 10px;
+.player-input {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.player-input>input {
+    height: 30px;
+    width: 200px;
+    font-size: 16px;
+    padding-left: 10px;
+}
+
+.player-input>button {
+    height: 30px;
+    background-color: rgb(8, 53, 138);
+    border: 2px solid rgb(8, 53, 138);
+    border: 0;
+    color: white;
+    padding: 0 20px;
+    font-size: 16px;
+    cursor: pointer;
+    outline: none;
+}
+
+.player-input>button:active {
+    background-color: white;
+    color: rgb(8, 53, 138);
 }
 
 #root>div {
