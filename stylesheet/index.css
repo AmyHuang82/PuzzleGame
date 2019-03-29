@@ -1,0 +1,45 @@
+* {
+    box-sizing: border-box;
+}
+
+div {
+    text-align: center;
+}
+
+input {
+    margin-right: 10px;
+}
+
+#root>div {
+    margin-top: 30px;
+}
+
+.counter {
+    margin: 10px;
+}
+
+.puzzle {
+    margin: 20px auto;
+    display: flex;
+    flex-flow: row wrap;
+    width: 302px;
+    height: 302px;
+    border: 1px solid rgb(8, 53, 138);
+}
+
+.puzzle-block {
+    width: 100px;
+    height: 100px;
+    border: 1px solid rgb(8, 53, 138);
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(166, 230, 255);
+    color: rgb(8, 53, 138);
+}
+
+.blank {
+    font-size: 0;
+    background-color: white;
+}
