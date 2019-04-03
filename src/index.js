@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom';
+import { BrowserRouter as Router, Route, NavLink, IndexRoute } from 'react-router-dom';
 import App from './App';
 import RankingShow from './RankingShow';
 
@@ -11,6 +11,12 @@ class Main extends React.Component {
             <Router basename={"/PuzzleGame/#/"}>
                 <NavLink to="/" exact className="category" activeStyle={{ backgroundColor: "rgb(165, 165, 165)", color: "white" }}>Game</NavLink>
                 <NavLink to="/ranking" exact className="category" activeStyle={{ backgroundColor: "rgb(165, 165, 165)", color: "white" }}>Rank</NavLink>
+
+                <IndexRoute render={
+                    () => {
+                        return (<App />);
+                    }
+                } />
 
                 <Route path="/" exact render={
                     () => {
