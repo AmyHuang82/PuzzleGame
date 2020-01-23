@@ -4,10 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-<<<<<<< HEAD
-=======
     "start": "NODE_ENV=development webpack --watch",
->>>>>>> Refactor: use eslint prettier styled-component
     "build": "NODE_ENV=production webpack"
   },
   "keywords": [],
