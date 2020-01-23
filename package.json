@@ -4,6 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+<<<<<<< HEAD
+=======
+    "start": "NODE_ENV=development webpack --watch",
+>>>>>>> Refactor: use eslint prettier styled-component
     "build": "NODE_ENV=production webpack"
   },
   "keywords": [],
@@ -12,17 +16,27 @@
   "dependencies": {
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-router-dom": "^5.0.0"
+    "react-router-dom": "^5.0.0",
+    "prop-types": "^15.7.2",
+    "styled-components": "^4.4.1"
   },
   "devDependencies": {
     "@babel/core": "^7.4.0",
     "@babel/preset-env": "^7.4.2",
     "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.0.5",
-    "css-loader": "^2.1.1",
-    "style-loader": "^0.23.1",
+    "babel-eslint": "^10.0.3",
     "webpack": "^4.29.6",
     "webpack-cli": "^3.3.0",
-    "webpack-dev-server": "^3.2.1"
+    "webpack-dev-server": "^3.2.1",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-config-prettier": "^6.9.0",
+    "eslint-plugin-import": "^2.19.1",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.1.2",
+    "eslint-plugin-react": "^7.17.0",
+    "eslint-plugin-react-hooks": "^1.7.0",
+    "prettier": "^1.19.1"
   }
 }

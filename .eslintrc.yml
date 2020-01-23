@@ -1,0 +1,127 @@
+---
+root: true
+
+parser: babel-eslint
+
+extends:
+  - airbnb
+  - airbnb/hooks
+  - plugin:prettier/recommended
+  - prettier/react
+
+env:
+  browser: true
+  node: true
+
+globals:
+  mixpanel: true
+  t: true
+  browserHistory: true
+
+settings:
+  import/resolver:
+    node: {}
+    webpack:
+      config: webpack.config.js
+
+rules:
+  # https://eslint.org/docs/rules/
+  # Possible Errors
+  no-control-regex: warn
+
+  # Best Practices
+  no-param-reassign: warn
+  consistent-return: off
+  no-else-return: off
+  radix: off
+
+  # Variable Declarations
+  no-use-before-define: [error, { functions: false }]
+  no-shadow: off
+
+  # Node.js and CommonJS
+  global-require: warn
+
+  # Stylistic Issues
+  comma-dangle: [error, {
+    arrays: always-multiline,
+    objects: always-multiline,
+    imports: always-multiline,
+    exports: always-multiline,
+    functions: ignore
+  }]
+  jsx-quotes: [error, prefer-double]
+  semi: [error, always]
+  id-length: [warn, { exceptions: [e, i, _, t, R] }]
+  max-len: warn
+  new-cap: warn
+  no-bitwise: warn
+  no-underscore-dangle: [warn, { allow: [__REDUX_DEVTOOLS_EXTENSION__, __REDUX_DEVTOOLS_EXTENSION_COMPOSE__] }]
+  function-paren-newline: off
+  implicit-arrow-linebreak: off
+  lines-between-class-members: off
+  no-mixed-operators: off
+  no-nested-ternary: off
+  object-curly-newline: off
+  operator-linebreak: off
+  no-plusplus: off
+
+  # ECMAScript 6
+  arrow-parens: off
+  prefer-destructuring: off
+
+  # Plugins
+  # react-hooks
+  react-hooks/rules-of-hooks: error
+  react-hooks/exhaustive-deps: warn
+  # react
+  react/forbid-foreign-prop-types: error
+  react/forbid-prop-types: [error, { forbid: [any] }]
+  react/jsx-wrap-multilines: [error, {
+    declaration: parens,
+    assignment: parens,
+    return: parens,
+    arrow: ignore,
+    condition: ignore,
+    logical: ignore,
+    prop: ignore
+  }]
+  react/jsx-filename-extension: [warn, { extensions: [.js, .jsx] }]
+  react/no-array-index-key: warn
+  react/no-did-update-set-state: warn
+  react/sort-comp: [warn, {
+    order: [
+      static-variables,
+      static-methods,
+      constructor,
+      instance-variables,
+      lifecycle,
+      instance-methods,
+      everything-else,
+      render
+    ]
+  }]
+  react/destructuring-assignment: off
+  react/jsx-curly-newline: off
+  react/jsx-props-no-spreading: off
+  react/jsx-one-expression-per-line: off
+  react/require-default-props: off
+  react/state-in-constructor: off
+  react/static-property-placement: off
+  # import
+  import/no-extraneous-dependencies: [error, { devDependencies: true }]
+  import/no-dynamic-require: warn
+  import/prefer-default-export: warn
+  import/no-cycle: warn
+  # jsx-a11y
+  # TODO: study and fix accessibility issues
+  jsx-a11y/alt-text: warn
+  jsx-a11y/anchor-is-valid: warn
+  jsx-a11y/anchor-has-content: warn
+  jsx-a11y/click-events-have-key-events: warn
+  jsx-a11y/control-has-associated-label: warn
+  jsx-a11y/iframe-has-title: warn
+  jsx-a11y/label-has-associated-control: warn
+  jsx-a11y/no-autofocus: warn
+  jsx-a11y/no-noninteractive-element-interactions: warn
+  jsx-a11y/no-static-element-interactions: warn
