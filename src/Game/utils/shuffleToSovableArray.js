@@ -1,7 +1,5 @@
-import { useState } from 'react';
-
-const useShuffle = initialArray => {
-  const [array, setArray] = useState(initialArray);
+const shuffleToSovableArray = initialArray => {
+  let array = initialArray;
   let isSovable = null;
 
   const checkSovable = arr => {
@@ -40,15 +38,13 @@ const useShuffle = initialArray => {
       }
     }
 
-    setArray(shuffleArray);
+    array = shuffleArray;
     checkSovable(shuffleArray);
   };
 
-  const shuffleToSovableArray = () => {
-    while (!isSovable) shuffle();
-  };
+  while (!isSovable) shuffle();
 
-  return [array, shuffleToSovableArray];
+  return array;
 };
 
-export default useShuffle;
+export default shuffleToSovableArray;

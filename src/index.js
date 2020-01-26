@@ -1,56 +1,24 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { HashRouter as Router, Route, NavLink } from 'react-router-dom';
-import App from './App';
-import RankingShow from './RankingShow';
+import { HashRouter, Route } from 'react-router-dom';
+import GlobalStyle, { NavLink } from './index.style';
+import Game from './Game';
+// import Rank from './Rank';
 
-class Main extends React.Component {
-  render() {
-    return (
-      // 加上＃可以讓網頁不會重新導入到其他頁面重刷就不會出錯
-      <Router basename="/PuzzleGame/">
-        <NavLink
-          to="/"
-          exact
-          className="category"
-          activeStyle={{
-            backgroundColor: 'rgb(165, 165, 165)',
-            color: 'white',
-          }}
-        >
-          Game
-        </NavLink>
-        <NavLink
-          to="/ranking"
-          exact
-          className="category"
-          activeStyle={{
-            backgroundColor: 'rgb(165, 165, 165)',
-            color: 'white',
-          }}
-        >
-          Rank
-        </NavLink>
+const Main = () => (
+  <HashRouter basename="/puzzle-game/">
+    <NavLink to="/" exact>
+      Game
+    </NavLink>
+    <NavLink to="/rank" exact>
+      Rank
+    </NavLink>
 
-        <Route
-          path="/"
-          exact
-          render={() => {
-            return <App />;
-          }}
-        />
-
-        <Route
-          path="/ranking"
-          exact
-          render={() => {
-            return <RankingShow />;
-          }}
-        />
-      </Router>
-    );
-  }
-}
+    <Route path="/" exact component={Game} />
+    <Route path="/rank" exact rnder={() => <div>Rank</div>} />
+    <GlobalStyle />
+  </HashRouter>
+);
 
 window.addEventListener('load', () => {
   ReactDOM.render(<Main />, document.getElementById('root'));
